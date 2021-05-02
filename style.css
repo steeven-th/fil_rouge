@@ -1,5 +1,68 @@
+/*** CONFIGURATION GENERALE ***/
+
 body {
     margin: 0;
     padding: 0;
-    background-image: url("background.jpg");
+    background: url("images/background.jpg");
+    font-family: 'Roboto', sans-serif;
+}
+
+/*** CONFIGURATION HEADER ***/
+
+header {
+    background: url("images/banniere.jpg") no-repeat center -400px fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    line-height: 20vh;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2%;
+}
+
+#logo {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titre {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header #titre img {
+    width: 100%;
+    height: auto;
+}
+
+header #logo img {
+    width: 30%;
+    height: auto;
+}
+
+@media (min-width: 2200px) {
+    header {
+        background: url("images/banniere.jpg") no-repeat bottom center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 3900px) {
+    header {
+        background: url("images/banniere.jpg") no-repeat center -800px fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
 }
