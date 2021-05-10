@@ -69,9 +69,18 @@ header #logo img {
 
 /*** CONFIGURATION MENU DE NAVIGATION ***/
 
+#menu {
+    width: 100%;
+}
+
+.floatable {
+    position: fixed;
+    top: 0;
+}
+
 nav {
     height: 100%;
-    width: 80%;
+    /*width: 80%;*/
     max-width: 100%;
     margin: 0 auto 2% auto;
     display: flex;
@@ -80,7 +89,25 @@ nav {
     box-shadow: 0 8px 10px 1px rgb(0, 0, 0, 20%);
 }
 
-ul {
+#logo_nav {
+
+    align-self: center;
+}
+
+
+#logo_nav img {
+    height: 50px;
+}
+
+.visible {
+    display: initial;
+}
+
+.invisible {
+    display: none;
+}
+
+nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
