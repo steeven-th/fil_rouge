@@ -67,7 +67,7 @@ header #logo img {
     }
 }
 
-/*** CONFIGURATION MENU DE NAVIGATION ***/
+/*** CONFIGURATION MENU DE NAVIGATION EN MODE PAYSAGE ***/
 
 #menu {
     width: 100%;
@@ -80,11 +80,9 @@ header #logo img {
 
 nav {
     height: 100%;
-    /*width: 80%;*/
-    max-width: 100%;
     margin: 0 auto 2% auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: #f4f4f4;
     box-shadow: 0 8px 10px 1px rgb(0, 0, 0, 20%);
 }
@@ -147,6 +145,75 @@ nav ul li a {
     padding: 5%;
 }
 
+@media (max-width: 1420px) {
+    nav ul li a {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 nav ul li a:hover {
     color: white;
+}
+
+/*** CONFIGURATION MENU DE NAVIGATION EN MODE PORTRAIT ***/
+
+@media screen and (orientation: landscape) {
+    #menu_portrait {
+        display: none;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #menu {
+        display: none;
+    }
+
+    #menu_portrait {
+        position: fixed;
+        bottom: -1px;
+        width: 100%;
+    }
+
+    nav {
+        margin: 0;
+        box-shadow: 0 -10px 20px 1px rgba(0, 0, 0, 0.2);
+        padding-bottom: 2%;
+    }
+
+    nav ul {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+        padding: 20% 5%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li a .fa, .far, .fab, .fas {
+        font-size: 90px;
+        transition: 0.5s;
+        color: #000;
+        height: 100px;
+    }
+
+    nav ul li a span{
+        color: #000;
+        font-size: 25px;
+    }
+}
+
+/*** CONFIGURATION CONTENEUR PRINCIPAL ***/
+
+#main {
+    width: 80%;
+    margin: auto;
+}
+
+fieldset {
+    border: 1px solid black;
+    border-radius: 10px;
 }

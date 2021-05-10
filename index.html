@@ -13,9 +13,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./images/icon.png" />
-    <script   src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/80e9556c50.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script   src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
     <title>Baby Boom</title>
 </head>
 
@@ -33,33 +34,7 @@
 
     <!-- HEADER -->
 
-    <script>
-        $(function(){
-            // On recupere la position du bloc par rapport au haut du site
-            var position_top_raccourci = $("#menu").offset().top;
-
-            //Au scroll dans la fenetre on déclenche la fonction
-            $(window).scroll(function () {
-
-                //si on a dépasse le bloc
-                if ($(this).scrollTop() > position_top_raccourci) {
-
-                    //on ajoute la classe "floatable" a <div id="menu">
-                    $('#menu').addClass("floatable");
-                    $('#logo_nav').addClass("visible");
-                    $('#logo_nav').removeClass("invisible");
-                } else {
-
-                    //sinon on retire la classe "floatable" a <div id="menu">
-                    $('#menu').removeClass("floatable");
-                    $('#logo_nav').addClass("invisible");
-                    $('#logo_nav').removeClass("visible");
-                }
-            });
-        });
-    </script>
-
-    <header>
+    <header class="top">
         <div id="logo">
             <img src="images/logo.png" alt="logo" />
         </div>
@@ -68,38 +43,161 @@
         </div>
     </header>
 
+    <!-- Script pour le suivi du MENU lors du SCROLL -->
+    <script>
+        $(function(){
+
+            //Par défaut on cache le logo dans le menu
+            $('#logo_nav').addClass("invisible");
+
+            // On recupère la position du bloc MENU par rapport au haut du site
+            var position_top_raccourci = $("#menu").offset().top;
+
+            //Au scroll dans la fenetre on déclenche la fonction
+            $(window).scroll(function () {
+
+                //on exécute si la fenetre est en mode paysage. Si on est en portrait (mobile), on affichera un autre menu
+                if((window.matchMedia("(orientation: landscape)").matches)) {
+
+
+                    //si on a dépasse le bloc
+                    if ($(this).scrollTop() > position_top_raccourci) {
+
+                        //on ajoute la classe "floatable" a <div id="menu">
+                        $('#menu').addClass("floatable");
+
+                        //on retire la class "invisible" au logo
+                        $('#logo_nav').removeClass("invisible");
+
+                        //on ajoute la class "visible" au logo pour l'afficher
+                        $('#logo_nav').addClass("visible");
+
+                    } else {
+
+                        //sinon on retire la classe "floatable" a <div id="menu">
+                        $('#menu').removeClass("floatable");
+
+                        //on retire la class "visible" au logo
+                        $('#logo_nav').removeClass("visible");
+
+                        //on ajoute la class "invisible" au logo pour le cacher quand on remonte
+                        $('#logo_nav').addClass("invisible");
+                    }
+                }
+            });
+
+        });
+    </script>
+
     <!-- MENU DE NAVIGATION -->
     <div id="menu">
-    <nav>
-        <div id="logo_nav">
-            <img src="images/logo.png" alt="logo" />
-        </div>
-        <ul>
-            <li>
-                <a href="index.html">Accueil</a>
-            </li>
-            <li>
-                <a href="#">Menu 2</a>
-            </li>
-            <li>
-                <a href="#">Menu 3</a>
-            </li>
-            <li>
-                <a href="#">Menu 4</a>
-            </li>
-            <li>
-                <a href="#">Menu 5</a>
-            </li>
-            <li>
-                <a href="#">Menu 6</a>
-            </li>
-        </ul>
-    </nav>
+        <nav>
+            <div id="logo_nav">
+                <a href="#top">
+                    <img src="images/logo.png" alt="logo" />
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-baby" aria-hidden="true"></i>
+                        <span>Suivi</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        <span>Infos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                        <span>Calendrier</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-tasks" aria-hidden="true"></i>
+                        <span>Checklist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fab fa-shopify" aria-hidden="true"></i>
+                        <span>Bons plans</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-people-arrows" aria-hidden="true"></i>
+                        <span>Partage</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Compte</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="menu_portrait">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-baby" aria-hidden="true"></i>
+                        <span>Suivi</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        <span>Infos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                        <span>Calendrier</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-tasks" aria-hidden="true"></i>
+                        <span>Checklist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fab fa-shopify" aria-hidden="true"></i>
+                        <span>Bons plans</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-people-arrows" aria-hidden="true"></i>
+                        <span>Partage</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Compte</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
     <!--  FIN DE L'INCLUDE -->
 
+    <div id="main">
     <section>
 
+        <img src="images/grossesse.png" alt="grossesse">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Architecto aspernatur consequuntur cupiditate distinctio maiores numquam quidem quis,
@@ -416,6 +514,6 @@
         </p>
 
     </section>
-
+    </div>
 </body>
 </html>
