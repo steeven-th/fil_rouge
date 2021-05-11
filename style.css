@@ -10,7 +10,6 @@ body {
 /*** CONFIGURATION HEADER ***/
 
 header {
-
     background: linear-gradient(to left, #ECB6EE, #B79BF2, #A7B2F2, #C2C9F2, #80DBFB);
     line-height: 20vh;
     white-space: nowrap;
@@ -187,8 +186,6 @@ nav ul li a:hover {
     nav li:nth-child(1n+0):hover {
         background-color: transparent;
     }
-
-
 }
 
 /*** CONFIGURATION CONTENEUR PRINCIPAL ***/
@@ -202,6 +199,11 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+section:target {
+    padding-top: 2em;
+    margin-top: -2em;
 }
 
 section h2 {
