@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 0 0 80px 0;
     background: url("images/background.jpg");
     font-family: 'Roboto', sans-serif;
 }
@@ -71,6 +71,7 @@ header #logo img {
 
 #menu {
     width: 100%;
+    z-index: 9999;
 }
 
 .floatable {
@@ -84,7 +85,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
     background-color: #f4f4f4;
-    box-shadow: 0 8px 10px 1px rgb(0, 0, 0, 20%);
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.2);
 }
 
 #logo_nav {
@@ -173,6 +174,7 @@ nav ul li a:hover {
         position: fixed;
         bottom: -1px;
         width: 100%;
+        z-index: 9999;
     }
 
     nav {
@@ -204,16 +206,108 @@ nav ul li a:hover {
         color: #000;
         font-size: 25px;
     }
+
+    nav li:nth-child(1n+0):hover {
+        background-color: transparent;
+    }
+
+
 }
 
 /*** CONFIGURATION CONTENEUR PRINCIPAL ***/
 
 #main {
-    width: 80%;
+    width: 60%;
     margin: auto;
 }
 
-fieldset {
-    border: 1px solid black;
-    border-radius: 10px;
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    text-shadow: 3px 3px 6px rgba(221, 221, 221, 1);
+}
+
+section h3 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    text-shadow: 3px 3px 6px rgba(221, 221, 221, 1);
+}
+
+.pink {
+    color: #ECB6EEFF;
+}
+
+.blue {
+    color: #80DBFBFF;
+}
+
+article {
+    margin-bottom: 8rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+article img {
+    height: 100%;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4)) grayscale(100%);
+    align-self: center;
+}
+
+article.column img:nth-of-type(1) {
+    width: 35%;
+    margin-bottom: 1rem;
+}
+
+article.column img:nth-of-type(2) {
+    width: 35%;
+    margin-top: 1rem;
+}
+
+article.row img:nth-child(1) {
+    width: 25%;
+    margin-right: 3rem;
+}
+
+article.row img:nth-last-child(1) {
+    width: 25%;
+    margin-left: 3rem;
+}
+
+article p {
+    line-height: 1.39;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+@media screen and (max-width: 1920px) {
+    #main {
+        width: 90%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #main {
+        width: 90%;
+    }
+
+    article p {
+        font-size: 2.5em;
+    }
 }
