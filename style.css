@@ -10,11 +10,7 @@ body {
 /*** CONFIGURATION HEADER ***/
 
 header {
-    /*background: url("images/banniere.jpg") no-repeat center -400px fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
+
     background: linear-gradient(to left, #ECB6EE, #B79BF2, #A7B2F2, #C2C9F2, #80DBFB);
     line-height: 20vh;
     white-space: nowrap;
@@ -47,27 +43,7 @@ header #logo img {
     width: 30%;
     height: auto;
 }
-/*
-@media (min-width: 2200px) {
-    header {
-        background: url("images/banniere.jpg") no-repeat bottom center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
-}
 
-@media (min-width: 3900px) {
-    header {
-        background: url("images/banniere.jpg") no-repeat center -800px fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
-}
-*/
 /*** CONFIGURATION MENU DE NAVIGATION EN MODE PAYSAGE ***/
 
 #menu {
