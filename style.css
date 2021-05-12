@@ -319,7 +319,7 @@ article p {
     width: 50px;
 }
 
-.red::after {
+.red_star::after {
     content: "*";
     color: red;
 }
