@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    padding: 0 0 80px 0;
+    padding: 0;
     background: url("images/background.jpg");
     font-family: 'Roboto', sans-serif;
 }
@@ -186,6 +186,10 @@ nav ul li a:hover {
     nav li:nth-child(1n+0):hover {
         background-color: transparent;
     }
+
+    footer {
+        padding-bottom: 220px;
+    }
 }
 
 /*** CONFIGURATION CONTENEUR PRINCIPAL ***/
@@ -289,4 +293,50 @@ article p {
     article p {
         font-size: 2.5em;
     }
+}
+
+/*** CONFIGURATION FOOTER ***/
+
+footer {
+    background-color: #f4f4f4;
+    box-shadow: 0 -8px 10px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+footer h3 {
+    background: none;
+    font-size: 20px;
+}
+
+footer ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-inline-start: 30%;
+}
+
+footer ul > li > a {
+    font-size: 1.2em;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+
+.footer_col {
+    width: 20%;
+    padding: 1%;
+}
+
+.footer_col:nth-child(3) a > img {
+    margin-top: 10px;
+    width: 30%;
+}
+
+.footer_col:nth-child(2) a > img {
+    width: 50%;
 }
