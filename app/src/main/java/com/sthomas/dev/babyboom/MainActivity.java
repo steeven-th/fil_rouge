@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.sthomas.dev.babyboom.bean.PregnancyBean;
 import com.sthomas.dev.babyboom.databinding.ActivityMainBinding;
@@ -12,7 +11,7 @@ import com.sthomas.dev.babyboom.databinding.ActivityMainBinding;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends CommunActivity implements View.OnClickListener {
 
     //Déclaration du binding contenant les références des composants
     private ActivityMainBinding binding;
@@ -29,8 +28,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setContentView(binding.getRoot());
 
+        /*----------------------*/
+        // Appel de la ToolBar depuis CommunActivity
+        /*----------------------*/
+        menuTopAppBarNavIcon(binding.topAppBar);
+
+        menuTopAppBar(binding.topAppBar);
+
+        /*----------------------*/
+        // Appel de la BottomBar depuis CommunActivity
+        /*----------------------*/
+        menuBottomAppBarNavIcon(binding.bottomAppBar);
+
+        menuBottomAppBar(binding.bottomAppBar, binding.floatingActionButton);
+
         //clic boutons
-        binding.btEnvoyerProgress.setOnClickListener(this);
+        binding.btTipOfTheWeek.setOnClickListener(this);
+        binding.btBabyInfos.setOnClickListener(this);
 
         System.out.println(pregnancyBean.getDateFertilization());
         System.out.println(pregnancyBean.getDateDelivery());
@@ -38,15 +52,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Affichage du nombre de jours restants avant accouchement dans la progressBar
         //Maj avancement de la progressBar
         remainingPregnancy();
+
     }
 
     @Override
     public void onClick(View view) {
 
-        if (view == binding.btEnvoyerProgress && !binding.etSetProgress.getText().toString().isEmpty()) {
-            //setProgressTo(Integer.parseInt(binding.etSetProgress.getText().toString()));
-        }
+//        if (view == binding.floatingActionButton) {
+//            Intent intent_home = new Intent(MainActivity.this, ConnectActivity.class);
+//            startActivity(intent_home);
+//        }
     }
+
 
     public void setProgressTo(Integer progress, Integer remainingDays) {
 

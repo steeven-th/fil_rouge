@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+
+    <!--    <item-->
+    <!--        android:id="@+id/bt_account_infos"-->
+    <!--        android:icon="@drawable/ic_babyboom"-->
+    <!--        android:title=""-->
+    <!--        app:showAsAction="ifRoom" />-->
+
+</menu>

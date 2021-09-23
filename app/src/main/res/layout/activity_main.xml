@@ -1,202 +1,386 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/background"
-    android:fillViewport="false"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:background="@drawable/background"
+        android:backgroundTintMode="multiply"
+        android:fillViewport="false"
         android:orientation="vertical"
-        android:padding="10dp"
-        tools:context=".MainActivity">
-
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="10dp"
+            tools:context=".MainActivity">
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_height="120dp"
-                android:layout_weight="2"
-                android:padding="10dp"
-                app:srcCompat="@drawable/ic_jpg" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
-                <ProgressBar
-                    android:id="@+id/circular_determinative_pb"
-                    android:layout_width="120dp"
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="0dp"
                     android:layout_height="120dp"
-                    android:indeterminateOnly="false"
-                    android:progressDrawable="@drawable/pb_circular_determinative"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:progress="100" />
+                    android:layout_weight="2"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/ic_jpg" />
 
-                <TextView
-                    android:id="@+id/tv_progress"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
-                    android:textAlignment="center"
-                    android:textColor="#80DBFB"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/circular_determinative_pb"
-                    app:layout_constraintEnd_toEndOf="@+id/circular_determinative_pb"
-                    app:layout_constraintStart_toStartOf="@+id/circular_determinative_pb"
-                    app:layout_constraintTop_toTopOf="@+id/circular_determinative_pb"
-                    tools:text="50%" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_weight="1">
+
+                    <ProgressBar
+                        android:id="@+id/circular_determinative_pb"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:indeterminateOnly="false"
+                        android:progressDrawable="@drawable/pb_circular_determinative"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:progress="100" />
+
+                    <TextView
+                        android:id="@+id/tv_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
+                        android:textAlignment="center"
+                        android:textColor="#80DBFB"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circular_determinative_pb"
+                        app:layout_constraintEnd_toEndOf="@+id/circular_determinative_pb"
+                        app:layout_constraintStart_toStartOf="@+id/circular_determinative_pb"
+                        app:layout_constraintTop_toTopOf="@+id/circular_determinative_pb"
+                        tools:text="50%" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
+                            android:gravity="center"
+                            android:text="SEMAINE EN COURS"
+                            android:textColor="#80DBFB" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
+                            android:gravity="center"
+                            android:text="JOURS RESTANTS"
+                            android:textColor="#80DBFB" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_passed_days_week"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
+                            android:gravity="center"
+                            android:text="0 jours"
+                            android:textColor="#EBB6EE" />
+
+                        <TextView
+                            android:id="@+id/tv_remaining_days"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
+                            android:gravity="center"
+                            android:text="0 jours"
+                            android:textColor="#EBB6EE" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_jpg" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
+                            android:gravity="center"
+                            android:text="Cette semaine"
+                            android:textColor="#80DBFB" />
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Votre bébé mesure 34cm et pèse 1,1Kg, l'équivalent d'une aubergine."
+                            android:textAlignment="center" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_button_blue_pink"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/bt_tip_of_the_week"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginVertical="5dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:fontFamily="@font/sthomas_sf_pro_rounded_black"
+                            android:text="Astuce de la semaine"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_button_pink_blue"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/bt_baby_infos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_marginVertical="5dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:fontFamily="@font/sthomas_sf_pro_rounded_black"
+                            android:text="Les infos de bébé"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
+                            android:gravity="center"
+                            android:text="RDV à prendre"
+                            android:textColor="#80DBFB" />
+
+                        <TextView
+                            android:id="@+id/tv_appointment_to_be_made"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
+                            android:gravity="center"
+                            android:text="TextView" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="10dp"
+                        android:background="#707070"
+                        android:orientation="horizontal" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
+                            android:gravity="center"
+                            android:text="Prochain RDV pris"
+                            android:textColor="#80DBFB" />
+
+                        <TextView
+                            android:id="@+id/tv_next_appointment_made"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
+                            android:gravity="center"
+                            android:text="TextView" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 
-        <androidx.cardview.widget.CardView
+    </ScrollView>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/background_button_blue_pink"
+            app:menu="@menu/top_app_bar"
+            app:title="BabyBoom">
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/babyboom" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:cardCornerRadius="5dp"
-            app:cardUseCompatPadding="true">
+            android:layout_gravity="bottom"
+            android:backgroundTint="#80DBFB"
+            app:fabAlignmentMode="end"
+            app:fabAnimationMode="slide"
+            app:fabCradleMargin="8dp"
+            app:fabCradleRoundedCornerRadius="50dp"
+            app:menu="@menu/bottom_app_bar" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
-                        android:gravity="center"
-                        android:text="SEMAINE EN COURS"
-                        android:textColor="#80DBFB" />
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
-                        android:gravity="center"
-                        android:text="JOURS RESTANTS"
-                        android:textColor="#80DBFB" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_passed_days_week"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
-                        android:gravity="center"
-                        android:text="0 jours"
-                        android:textColor="#EBB6EE" />
-
-                    <TextView
-                        android:id="@+id/tv_remaining_days"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
-                        android:gravity="center"
-                        android:text="0 jours"
-                        android:textColor="#EBB6EE" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:cardCornerRadius="5dp"
-            app:cardUseCompatPadding="true">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_jpg" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
-                        android:gravity="center"
-                        android:text="TextView"
-                        android:textColor="#80DBFB" />
-
-                    <TextView
-                        android:id="@+id/textView12"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Votre bébé mesure 34cm et pèse 1,1Kg, l'équivalent d'une aubergine."
-                        android:textAlignment="center" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <Button
-            android:id="@+id/bt_envoyer_progress"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="envoyer" />
+            android:contentDescription="accueil"
+            app:backgroundTint="#EBB6EE"
+            app:layout_anchor="@id/bottomAppBar"
+            app:srcCompat="@drawable/ic_babyboom"
+            app:tint="@null" />
 
-        <EditText
-            android:id="@+id/et_set_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="50" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    </LinearLayout>
-
-</ScrollView>
+</FrameLayout>

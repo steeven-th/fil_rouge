@@ -1,8 +1,10 @@
 package com.sthomas.dev.babyboom;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +12,7 @@ import com.sthomas.dev.babyboom.databinding.ActivityConnectBinding;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
-public class ConnectActivity extends AppCompatActivity implements View.OnClickListener {
+public class ConnectActivity extends CommunActivity implements View.OnClickListener {
 
     //Déclaration du binding contenant les références des composants
     private ActivityConnectBinding binding;
@@ -41,15 +43,20 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
 
             System.out.println("clic connexion");
 
+            /*----------------------*/
+            // Vérification de connection
+            /*----------------------*/
+
+            //On vérifie que l'email et le mot de passe ne soient pas vides
 //            if (binding.tvEmailLogin.getText().toString().isEmpty() || binding.tvPasswordLogin.getText().toString().isEmpty()) {
 //
 //                binding.tvLoginError.setVisibility(View.VISIBLE);
 //                binding.tvLoginError.setText("Tous les champs sont requis");
-//            } else if (!validator.isValid(binding.tvEmailLogin.getText().toString())) {
+//            } else if (!validator.isValid(binding.tvEmailLogin.getText().toString())) { //Si l'email n'est pas dans le bon format, on affiche une erreur
 //
 //                binding.tvLoginError.setVisibility(View.VISIBLE);
 //                binding.tvLoginError.setText("Email erroné");
-//            } else {
+//            } else { //Si tout va bien, on envoi sur la page MainActivity
 //                Intent intent = new Intent(this, MainActivity.class);
 //                startActivity(intent);
 //            }

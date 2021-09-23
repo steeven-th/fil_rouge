@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/page_home"
+        android:contentDescription=""
+        android:icon="@drawable/ic_home"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/page_hospital"
+        android:contentDescription=""
+        android:icon="@drawable/ic_hospital"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/page_calendar"
+        android:contentDescription=""
+        android:icon="@drawable/ic_calendar"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/page_checklist"
+        android:contentDescription=""
+        android:icon="@drawable/ic_checklist"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/page_deal"
+        android:contentDescription=""
+        android:icon="@drawable/ic_deal"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/page_share_people"
+        android:contentDescription=""
+        android:icon="@drawable/ic_share_people"
+        android:title=""
+        app:showAsAction="always" />
+
+</menu>
