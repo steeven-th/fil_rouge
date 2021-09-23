@@ -178,6 +178,8 @@ public class MapActivity extends CommunActivity implements OnMapReadyCallback, V
             public void run() {
                 try {
 
+                    GoogleKeys googleKeys = new GoogleKeys();
+
                     //Récupération de tous les POI demandés dans un rayon de 20km
                     poiResult = JsonUtils.loadPoi(
                             "https://maps.googleapis.com/maps/api/place/textsearch/json?" +
@@ -190,7 +192,8 @@ public class MapActivity extends CommunActivity implements OnMapReadyCallback, V
                                     "%2C" + //Séparateur
                                     location.getLongitude() + //Longitude
                                     "&radius=20000" + //Périmètre de recherche en mètres
-                                    "&key=AIzaSyAYQRAoU-HPFbeeHZ0GffhmLbTLklyAdUs" //Clé de l'API
+                                    "&key=" +
+                                    googleKeys.googlePointerKey//Clé de l'API
                     );
 
                     //Appel de refreshScreen pour afficher les POI sur la carte
@@ -232,12 +235,15 @@ public class MapActivity extends CommunActivity implements OnMapReadyCallback, V
             public void run() {
                 try {
 
+                    GoogleKeys googleKeys = new GoogleKeys();
+
                     //Récupération de tous les POI demandés dans un rayon de 20km
                     markerClick = JsonUtils.loadDetailsPoi(
                             "https://maps.googleapis.com/maps/api/place/details/json?" +
                                     "place_id=" + //Type de recherche : par ID
                                     placeId + //Place ID récupérer dans le getTag du marker
-                                    "&key=AIzaSyAYQRAoU-HPFbeeHZ0GffhmLbTLklyAdUs" //Clé de l'API
+                                    "&key=" +
+                                    googleKeys.googlePointerKey//Clé de l'API
                     );
 
                     //Appel de refreshScreen pour afficher les POI sur la carte
