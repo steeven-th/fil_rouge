@@ -16,9 +16,6 @@ public class ConnectActivity extends CommunActivity implements View.OnClickListe
     //Déclaration du binding contenant les références des composants
     private ActivityConnectBinding binding;
 
-    //Attributs
-    //EmailValidator validator = EmailValidator.getInstance();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +36,6 @@ public class ConnectActivity extends CommunActivity implements View.OnClickListe
 
         // Si clic sur le bouton connexion, on charge la page principale MainActivity
         if (view == binding.btLogin) {
-
-            System.out.println("clic connexion");
 
             /*----------------------*/
             // Vérification de connection
@@ -75,8 +70,6 @@ public class ConnectActivity extends CommunActivity implements View.OnClickListe
 
                             //On récupère le JSON renvoyé
                             String jsonRecu = OkHttpUtils.sendPostOkHttpRequestLogin(URL + "/loginParents", jsonAEnvoyer);
-
-                            System.out.println("JSON RECU => " + jsonRecu);
 
                             //On vérifie si on reçoit TRUE ou FALSE
                             if (jsonRecu.equals("true")) {

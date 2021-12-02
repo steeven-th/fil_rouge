@@ -206,7 +206,6 @@ public class MapActivity extends CommunActivity implements OnMapReadyCallback, V
 
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.out.println(e.getMessage());
 
                     runOnUiThread(new Runnable() {
                         @Override
@@ -292,7 +291,6 @@ public class MapActivity extends CommunActivity implements OnMapReadyCallback, V
 
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.out.println(e.getMessage());
 
                     runOnUiThread(new Runnable() {
                         @Override

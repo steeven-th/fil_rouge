@@ -44,8 +44,6 @@ public class OkHttpUtils {
         //Corps de la requête
         RequestBody body = RequestBody.create(JSON, user);
 
-        System.out.println("OKHTTP BODY : " + body);
-
         //Création de la requete
         Request request = new Request.Builder().url(url).post(body).build();
 
@@ -55,8 +53,6 @@ public class OkHttpUtils {
         Response response = client.newCall(request).execute();
 
         System.out.println("OKHTTP RESPONSE : " + response);
-
-        System.out.println("OKHTTP BODY : " + response.body());
 
         //Analyse du code retour
         if (response.code() < 200 || response.code() >= 300) {

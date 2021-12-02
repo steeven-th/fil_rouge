@@ -31,8 +31,6 @@ public class CommonUtils extends AppCompatActivity {
             s.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
         }
 
-        System.out.println(s.toString());
-
         return s.toString();
     }
 }

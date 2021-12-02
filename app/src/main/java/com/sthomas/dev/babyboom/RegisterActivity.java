@@ -36,8 +36,6 @@ public class RegisterActivity extends CommunActivity implements View.OnClickList
         // Si clic sur le bouton s'enregistrer
         if (view == binding.btRegister) {
 
-            System.out.println("clic register");
-
             /*----------------------*/
             // Vérification de l'enregistrement
             /*----------------------*/
@@ -70,8 +68,6 @@ public class RegisterActivity extends CommunActivity implements View.OnClickList
                     //On converti l'utilisateur en JSON
                     String jsonAEnvoyer = CommonUtils.gson.toJson(parentsAEnvoyer);
 
-                    System.out.println("JSON A ENVOYER" + jsonAEnvoyer);
-
                     //Nouveau Thread
                     new Thread() {
                         @Override
@@ -80,8 +76,6 @@ public class RegisterActivity extends CommunActivity implements View.OnClickList
 
                                 //On récupère le JSON renvoyé
                                 String jsonRecu = OkHttpUtils.sendPostOkHttpRequestLogin(URL + "/saveParents", jsonAEnvoyer);
-
-                                System.out.println("JSON RECU => " + jsonRecu);
 
                                 //On vérifie si on reçoit TRUE ou FALSE
                                 if (jsonRecu.equals("true")) {

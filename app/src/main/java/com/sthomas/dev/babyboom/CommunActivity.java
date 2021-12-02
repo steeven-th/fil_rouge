@@ -102,16 +102,16 @@ public class CommunActivity extends CommonUtils {
 //                    startActivity(intent_calendar);
                     break;
                 case R.id.page_checklist:
-                    Intent intent_checklist = new Intent(this, MainActivity.class);
-                    startActivity(intent_checklist);
+//                    Intent intent_checklist = new Intent(this, MainActivity.class);
+//                    startActivity(intent_checklist);
                     break;
                 case R.id.page_deal:
-                    Intent intent_deal = new Intent(this, MainActivity.class);
-                    startActivity(intent_deal);
+//                    Intent intent_deal = new Intent(this, MainActivity.class);
+//                    startActivity(intent_deal);
                     break;
                 case R.id.page_share_people:
-                    Intent intent_share_people = new Intent(this, MainActivity.class);
-                    startActivity(intent_share_people);
+//                    Intent intent_share_people = new Intent(this, MainActivity.class);
+//                    startActivity(intent_share_people);
                     break;
                 default:
                     return false;
