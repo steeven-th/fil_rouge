@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ConnectActivity">
+        tools:context=".RegisterActivity">
 
         <TextView
             android:id="@+id/tv_login_error"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/sthomas_sf_pro_rounded_regular"
             android:gravity="center_horizontal"
-            android:text="Se connecter"
+            android:text="S'enregistrer"
             android:textSize="24sp" />
 
         <LinearLayout
@@ -57,22 +57,22 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/sthomas_sf_pro_rounded_black"
                 android:gravity="center_vertical|end"
-                android:text="Nouvel utilisateur ?" />
+                android:text="Déjà enregistré ?" />
 
             <TextView
-                android:id="@+id/tv_create_account_page"
+                android:id="@+id/tv_login_page"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:fontFamily="@font/sthomas_sf_pro_rounded_regular"
                 android:gravity="start|center_vertical"
-                android:text="Créer un compte"
+                android:text="Se connecter"
                 android:textColor="#2196F3" />
 
         </LinearLayout>
 
         <EditText
-            android:id="@+id/tv_email_login"
+            android:id="@+id/tv_email_create_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
@@ -84,7 +84,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/tv_password_login"
+            android:id="@+id/tv_password_create_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
@@ -95,23 +95,26 @@
             android:hint="Mot de passe"
             android:inputType="textPassword" />
 
-        <CheckBox
-            android:id="@+id/cb_remember_me"
+        <EditText
+            android:id="@+id/tv_password_confirmation_create_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
             android:layout_marginBottom="15dp"
+            android:background="@drawable/border_cardview"
+            android:ems="10"
             android:fontFamily="@font/sthomas_sf_pro_rounded_regular"
-            android:text="Se souvenir de moi" />
+            android:hint="Confirmation du mot de passe"
+            android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/bt_login"
+            android:id="@+id/bt_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
             android:backgroundTint="#3C3C3C"
             android:fontFamily="@font/sthomas_sf_pro_rounded_bold"
-            android:text="Se connecter" />
+            android:text="S'enregistrer" />
 
         <Button
             android:id="@+id/bt_access_share"

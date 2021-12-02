@@ -8,14 +8,16 @@ import android.location.LocationManager;
 import android.view.View;
 import android.view.WindowManager;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.sthomas.dev.babyboom.utils.CommonUtils;
 
-public class CommunActivity extends AppCompatActivity {
+public class CommunActivity extends CommonUtils {
+
+    public String URL = "http://192.168.1.238:8080";
 
     @Override
     protected void onResume() {

@@ -16,7 +16,7 @@ public class MainActivity extends CommunActivity implements View.OnClickListener
     //Déclaration du binding contenant les références des composants
     private ActivityMainBinding binding;
 
-    //Attributs
+    //Attributs de test (en attente de la BDD)
     PregnancyBean pregnancyBean = new PregnancyBean("2021-03-25", false);
 
     @Override
