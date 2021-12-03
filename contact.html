@@ -1,4 +1,4 @@
-<!-- En prévision intégration PHP --- DEBUT DE L'INCLUDE
+<!-- En prévision intégration PHP -- DEBUT DE L'INCLUDE
     <?php
 
     include 'head.php';
@@ -11,12 +11,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./images/icon.png" />
+    <link rel="icon" href="./images/icon.png"/>
     <script src="https://kit.fontawesome.com/80e9556c50.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script   src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/jquery.js"></script>
     <title>Baby Boom</title>
 </head>
@@ -25,122 +27,122 @@
 
 <!-- FIN DE L'INCLUDE -->
 
-    <header class="top">
-        <div id="logo">
-            <img src="images/logo.png" alt="logo" />
-        </div>
-        <div id="titre">
-            <img src="images/titre.png" alt="titre" />
-        </div>
-    </header>
-
-    <!-- MENU DE NAVIGATION -->
-    <div id="menu">
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">
-                        <i class="fas fa-home"></i>
-                        <span>Accueil</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+<header class="top">
+    <div id="logo">
+        <img src="images/logo.png" alt="logo"/>
     </div>
-
-    <div id="menu_portrait">
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">
-                        <i class="fas fa-home"></i>
-                        <span>Accueil</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div id="titre">
+        <img src="images/titre.png" alt="titre"/>
     </div>
+</header>
+
+<!-- MENU DE NAVIGATION -->
+<div id="menu">
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div id="menu_portrait">
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 
 
-    <div id="main">
+<div id="main">
 
-        <section>
+    <section>
 
-            <h3>Formulaire de contact :</h3>
+        <h3>Formulaire de contact :</h3>
 
-            <form method="POST" action="#">
+        <form method="POST" action="#">
 
-                <div class="contenu_contact">
-                    <div>
-                        <div class="formulaire">
-                            <label class="red_star" for="nom">Nom :</label>
-                            <input type="text" minlength="2" maxlength="20" name="nom" id="nom"/>
-                        </div>
-                        <div class="formulaire">
-                            <label class="red_star" for="prenom">Prénom :</label>
-                            <input type="text" name="prenom" id="prenom"/>
-                        </div>
-                        <div class="formulaire">
-                            <label class="red_star" for="mail">Email :</label>
-                            <input type="email" name="mail" id="mail"/>
-                        </div>
-                        <div class="formulaire">
-                            <label for="tel">Téléphone :</label>
-                            <input type="tel" name="tel" id="tel"/>
-                        </div>
+            <div class="contenu_contact">
+                <div>
+                    <div class="formulaire">
+                        <label class="red_star" for="nom">Nom :</label>
+                        <input type="text" minlength="2" maxlength="20" name="nom" id="nom"/>
                     </div>
-                    <div></div>
-                    <div>
-                        <div class="formulaire">
-                            <label class="red_star" for="message">Votre message :</label>
-                            <textarea name="message" id="message"></textarea>
-                        </div>
+                    <div class="formulaire">
+                        <label class="red_star" for="prenom">Prénom :</label>
+                        <input type="text" name="prenom" id="prenom"/>
+                    </div>
+                    <div class="formulaire">
+                        <label class="red_star" for="mail">Email :</label>
+                        <input type="email" name="mail" id="mail"/>
+                    </div>
+                    <div class="formulaire">
+                        <label for="tel">Téléphone :</label>
+                        <input type="tel" name="tel" id="tel"/>
                     </div>
                 </div>
-                <div class="formulaire">
-                    <input type="submit" value="Envoyer">
+                <div></div>
+                <div>
+                    <div class="formulaire">
+                        <label class="red_star" for="message">Votre message :</label>
+                        <textarea name="message" id="message"></textarea>
+                    </div>
                 </div>
-            </form>
+            </div>
+            <div class="formulaire">
+                <input type="submit" value="Envoyer">
+            </div>
+        </form>
 
-        </section>
+    </section>
 
+</div>
+
+<footer>
+    <div class="footer_col">
+        <h3>Informations</h3>
+        <ul>
+            <li>
+                <a href="#">Qui sommes-nous ?</a>
+            </li>
+            <li>
+                <a href="#">CGV</a>
+            </li>
+            <li>
+                <a href="#">Mentions légales</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+        </ul>
     </div>
-
-    <footer>
-        <div class="footer_col">
-            <h3>Informations</h3>
-            <ul>
-                <li>
-                    <a href="#">Qui sommes-nous ?</a>
-                </li>
-                <li>
-                    <a href="#">CGV</a>
-                </li>
-                <li>
-                    <a href="#">Mentions légales</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer_col">
-            <h3>Téléchargez l'application</h3>
-            <a href="#" target="_blank">
-                <img src="images/app-store.png" alt="APP STORE">
-            </a>
-            <a href="#" target="_blank">
-                <img src="images/play-store.png" alt="PLAYP STORE">
-            </a>
-        </div>
-        <div class="footer_col">
-            <h3>Réalisé par</h3>
-            <a href="https://github.com/steeven-th" target="_blank">
-                <img src="images/profil.png" alt="Steeven Thomas">
-            </a>
-            <p>Steeven Thomas</p>
-        </div>
-    </footer>
+    <div class="footer_col">
+        <h3>Téléchargez l'application</h3>
+        <a href="#" target="_blank">
+            <img src="images/app-store.png" alt="APP STORE">
+        </a>
+        <a href="#" target="_blank">
+            <img src="images/play-store.png" alt="PLAYP STORE">
+        </a>
+    </div>
+    <div class="footer_col">
+        <h3>Réalisé par</h3>
+        <a href="https://github.com/steeven-th" target="_blank">
+            <img src="images/profil.png" alt="Steeven Thomas">
+        </a>
+        <p>Steeven Thomas</p>
+    </div>
+</footer>
 
 </body>
 </html>
