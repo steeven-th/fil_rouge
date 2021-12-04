@@ -25,6 +25,10 @@
 composer.lock
 ###< Composer ###
 
+###> Cache SCSS ###
+/public/css/.sass-cache
+###< Composer ###
+
 ###> Intellij ###
 .idea
 ###< Intellij ###
