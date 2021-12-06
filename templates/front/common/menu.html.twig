@@ -1,51 +1,60 @@
 <nav>
     <div id="logo_nav">
-        <a href="#">
+        <a href="{{ path('index') }}">
             <img src="{{ asset('images/logo.png') }}" alt="logo"/>
         </a>
     </div>
     <ul>
         <li>
-            <a href="#suivi">
+            <a href="{{ path('index') }}#suivi">
                 <i class="fas fa-baby" aria-hidden="true"></i>
                 <span>Suivi</span>
             </a>
         </li>
         <li>
-            <a href="#infos">
+            <a href="{{ path('index') }}#infos">
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span>Infos</span>
             </a>
         </li>
         <li>
-            <a href="#calendrier">
+            <a href="{{ path('index') }}#calendrier">
                 <i class="far fa-calendar-alt" aria-hidden="true"></i>
                 <span>Calendrier</span>
             </a>
         </li>
         <li>
-            <a href="#checklist">
+            <a href="{{ path('index') }}#checklist">
                 <i class="fa fa-tasks" aria-hidden="true"></i>
                 <span>Checklist</span>
             </a>
         </li>
         <li>
-            <a href="#bons_plans">
+            <a href="{{ path('index') }}#bons_plans">
                 <i class="fab fa-shopify" aria-hidden="true"></i>
                 <span>Bons plans</span>
             </a>
         </li>
         <li>
-            <a href="#partage">
+            <a href="{{ path('index') }}#partage">
                 <i class="fa fa-people-arrows" aria-hidden="true"></i>
                 <span>Partage</span>
             </a>
         </li>
-        <li>
-            <a href="#">
-                <i class="far fa-share-square"></i>
-                <span>Go Baby</span>
-            </a>
-        </li>
+        {% if app.user %}
+            <li>
+                <a href="{{ path('my_account') }}">
+                    <i class="far fa-share-square"></i>
+                    <span>Go Baby</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_logout') }}">Déconnexion</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ path('app_login') }}">Connexion</a>
+            </li>
+        {% endif %}
     </ul>
 </nav>

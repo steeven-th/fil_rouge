@@ -1,5 +1,29 @@
 @import 'vars';
 
+/*** REMISE A ZERO DES REGLAGES NAVIGATEURS ***/
+
+ul {
+  margin: 0;
+}
+
+/*** SURCHARGE BOOTSTRAP ***/
+.invalid-feedback {
+  font-size: 0.6em;
+}
+
+/* modale popup */
+.modal-body {
+  text-align: center;
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+.modal-dialog {
+  top: 50vh;
+}
+
 /*** CONFIGURATION GENERALE ***/
 
 body {
@@ -332,8 +356,8 @@ article p {
 }
 
 label {
-  margin-bottom: 5%;
-  margin-top: 5%;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
 
 form {
@@ -354,11 +378,25 @@ form {
 }
 
 input {
-  border-radius: .50rem;
-  border: 1px black solid;
+  border-radius: .50rem !important;
+  border: 1px black solid !important;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.2);
-  height: calc(1.5em + .75rem + 2px);
-  background-color: #f7f7f7;
+  height: 4vh;
+  background-color: #f7f7f7 !important;
+}
+
+.group_checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkbox {
+  box-shadow: none;
+  margin: 0 1em;
+}
+
+.checkbox:focus {
+  box-shadow: none;
 }
 
 input:focus {
@@ -436,4 +474,13 @@ footer ul > li > a {
 
 .footer_col:nth-child(2) a > img {
   width: 50%;
+}
+
+.btn-primary {
+  color: #000000;
+  border-color: #000000;
+  cursor: pointer;
+  font-size: 1em;
+  background: linear-gradient(to left, $pink, $purpleOne, $purpleTwo, $purpleThree, $cyan);
+  margin-top: 5%;
 }

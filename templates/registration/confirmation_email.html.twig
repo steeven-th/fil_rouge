@@ -1,0 +1,13 @@
+<h1>{% trans from 'email' %}Hi! Please confirm your email!{% endtrans %}</h1>
+
+<p>
+    {% trans from 'email' %}Please confirm your email address by clicking the following link:{% endtrans %}
+    <a href="{{ signedUrl }}">{% trans from 'email' %}Confirm my Email{% endtrans %}</a>.
+    <br>
+    {% trans from 'email' %}This link will expire in{% endtrans %} {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}
+    .
+</p>
+
+<p>
+    {% trans from 'email' %}Cheers!{% endtrans %}
+</p>

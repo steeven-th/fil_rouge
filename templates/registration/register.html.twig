@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block main %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <section>
+        <h3>{% trans from 'security' %}Registration form{% endtrans %}</h3>
+
+        {{ form_start(registrationForm) }}
+
+        <div class="formulaire">
+            {# {{ form_label(registrationForm.email, 'Email ', { 'label_attr': {'class': 'red_star'} }) }} #}
+            <label for="registration_form_plainPassword"
+                   class="red_star">{% trans from 'security' %}Email{% endtrans %} </label>
+            {{ form_widget(registrationForm.email) }}
+        </div>
+
+        <div class="formulaire">
+            {# {{ form_label(registrationForm.plainPassword, 'Mot de passe ', { 'label_attr': {'class': 'red_star'} }) }} #}
+            <label for="registration_form_plainPassword"
+                   class="red_star">{% trans from 'security' %}Password{% endtrans %} </label>
+            {{ form_widget(registrationForm.plainPassword) }}
+        </div>
+
+        <div class="formulaire group_checkbox">
+            {# {{ form_label(registrationForm.agreeTerms, 'J\'accepte les conditions générales de vente ', { 'label_attr': {'class': 'red_star'} } ) }} #}
+            <label for="registration_form_agreeTerms"
+                   class="red_star">{% trans from 'security' %}I accept the general conditions{% endtrans %} </label>
+            {{ form_widget(registrationForm.agreeTerms, { 'attr': {'class': 'checkbox'} }) }}
+        </div>
+
+        {% if not registrationForm.vars.valid %}
+            <div class="alert alert-danger">
+                {% set formErrors = registrationForm.vars.errors.form.getErrors(true) %}
+                {% if formErrors|length %}
+                    <ul>
+                        {% for error in formErrors %}
+                            <li>{{ error.message|trans({},'security') }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary">ENVOYER</button>
+        {{ form_end(registrationForm) }}
+
+    </section>
+{% endblock %}
