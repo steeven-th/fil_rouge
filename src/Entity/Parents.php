@@ -54,9 +54,9 @@ class Parents implements UserInterface, PasswordAuthenticatedUserInterface {
     private $email;
 
     /**
-     * @var int|null
+     * @var string
      *
-     * @ORM\Column(name="postalCode", type="integer", nullable=true)
+     * @ORM\Column(name="postalCode", type="string", nullable=true)
      */
     private $postalcode;
 
@@ -77,7 +77,7 @@ class Parents implements UserInterface, PasswordAuthenticatedUserInterface {
     /**
      * @var \Roles
      *
-     * @ORM\ManyToOne(targetEntity="Roles")
+     * @ORM\ManyToOne(targetEntity="Roles", cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idRole", referencedColumnName="idRole")
      * })
@@ -183,11 +183,11 @@ class Parents implements UserInterface, PasswordAuthenticatedUserInterface {
         return $this;
     }
 
-    public function getPostalcode(): ?int {
+    public function getPostalcode(): ?string {
         return $this->postalcode;
     }
 
-    public function setPostalcode(?int $postalcode): self {
+    public function setPostalcode(?string $postalcode): self {
         $this->postalcode = $postalcode;
 
         return $this;
@@ -219,11 +219,7 @@ class Parents implements UserInterface, PasswordAuthenticatedUserInterface {
 
     public function setIdrole(?Roles $idrole): self {
 
-        if (empty($idrole) || $idrole == null) {
-            $this->idrole = 2;
-        } else {
-            $this->idrole = $idrole;
-        }
+        $this->idrole = $idrole;
 
         return $this;
     }

@@ -3,7 +3,7 @@
 namespace App\Controller\Front;
 
 use App\Entity\Parents;
-use App\Form\RegistrationFormType;
+use App\Form\EditProfileFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -35,7 +35,10 @@ class IndexController extends AbstractController {
     }
 
     /**
-     * @Route("/my-account", name="my_account")
+     * @Route({
+     *     "en": "/my-account",
+     *     "fr": "/mon-compte",
+     * }, name="my_account")
      */
     public function myAccount(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, TranslatorInterface $translator): Response {
 
@@ -50,19 +53,21 @@ class IndexController extends AbstractController {
 
         $userUpdate = new Parents();
 
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form = $this->createForm(EditProfileFormType::class, $user);
         $form->handleRequest($request);
 
 
         if ($form->isSubmitted() && $form->isValid()) {
 
             // encode the plain password
-            $user->setPassword(
-                $userPasswordHasher->hashPassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
+            if ($form->get('plainPassword')->getData()) {
+                $user->setPassword(
+                    $userPasswordHasher->hashPassword(
+                        $user,
+                        $form->get('plainPassword')->getData()
+                    )
+                );
+            }
 
 //            $user->setSharecode(
 //                $userPasswordHasher->hashPassword(
@@ -73,6 +78,8 @@ class IndexController extends AbstractController {
 
             $entityManager->persist($user);
             $entityManager->flush();
+
+            $this->addFlash('success', $translator->trans('Your information has been updated', array(), 'general'));
 
             // do anything else you need here, like send an email
 
@@ -85,18 +92,14 @@ class IndexController extends AbstractController {
             //return $this->redirectToRoute('index');
         }
 
-        //dd($user);
-
         $userInfos = $this->getDoctrine()->getRepository(Parents::class)->findOneBy(
             ['email' => $user->getUserIdentifier()]
         );
 
-        //dd($userInfos);
-
         return $this->render('front/account/index.html.twig', [
             'controller_name' => 'IndexController',
             'userInfos' => $userInfos,
-            'registrationForm' => $form->createView(),
+            'editProfileForm' => $form->createView(),
         ]);
     }
 }

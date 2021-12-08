@@ -1,46 +1,32 @@
 <nav>
     <ul>
         <li>
-            <a href="#suivi">
-                <i class="fas fa-baby" aria-hidden="true"></i>
-                <span>Suivi</span>
+            <a href="{{ path('index') }}">
+                <img src="{{ asset('images/logo.png') }}" alt="logo"/>
             </a>
         </li>
-        <li>
-            <a href="#infos">
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                <span>Infos</span>
-            </a>
-        </li>
-        <li>
-            <a href="#calendrier">
-                <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                <span>Calendrier</span>
-            </a>
-        </li>
-        <li>
-            <a href="#checklist">
-                <i class="fa fa-tasks" aria-hidden="true"></i>
-                <span>Checklist</span>
-            </a>
-        </li>
-        <li>
-            <a href="#bons_plans">
-                <i class="fab fa-shopify" aria-hidden="true"></i>
-                <span>Bons plans</span>
-            </a>
-        </li>
-        <li>
-            <a href="#partage">
-                <i class="fa fa-people-arrows" aria-hidden="true"></i>
-                <span>Partage</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="far fa-share-square"></i>
-                <span>Go Baby</span>
-            </a>
-        </li>
+        {% if app.user %}
+            <li>
+                <a href="{{ path('my_account') }}">
+                    <i class="far fa-share-square"></i>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('my_account') }}">
+                    <i class="fas fa-user-alt"></i>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_logout') }}">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{{ path('app_login') }}">
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
+            </li>
+        {% endif %}
     </ul>
 </nav>

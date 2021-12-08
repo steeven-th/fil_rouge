@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>{% block title %}Welcome!{% endblock %}</title>
 
     {# FAVICON #}
@@ -21,11 +22,15 @@
     {# FONT GOOGLE #}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    {# FONTAWESOME ICONS #}
     <script src="https://kit.fontawesome.com/80e9556c50.js" crossorigin="anonymous"></script>
+
+    {# JQUERY #}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    {# JavaScript #}
+    {# CUSTOM JAVASCRIPT #}
     <script src="{{ asset('js/jquery.js') }}"></script>
     {# <script src="{{ asset('js/flashMessage.js') }}"></script> #}
 

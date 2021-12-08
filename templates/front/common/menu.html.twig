@@ -49,11 +49,23 @@
                 </a>
             </li>
             <li>
-                <a href="{{ path('app_logout') }}">Déconnexion</a>
+                <a href="{{ path('my_account') }}">
+                    <i class="fas fa-user-alt"></i>
+                    <span>Mon compte</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_logout') }}">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Déconnexion</span>
+                </a>
             </li>
         {% else %}
             <li>
-                <a href="{{ path('app_login') }}">Connexion</a>
+                <a href="{{ path('app_login') }}">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Connexion</span>
+                </a>
             </li>
         {% endif %}
     </ul>

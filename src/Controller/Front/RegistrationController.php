@@ -3,6 +3,7 @@
 namespace App\Controller\Front;
 
 use App\Entity\Parents;
+use App\Entity\Roles;
 use App\Form\RegistrationFormType;
 use App\Security\EmailVerifier;
 use App\Security\LoginFormAuthenticator;
@@ -26,7 +27,10 @@ class RegistrationController extends AbstractController {
     }
 
     /**
-     * @Route("/register", name="app_register")
+     * @Route({
+     *     "en": "/register",
+     *     "fr": "/inscription",
+     * }, name="app_register")
      */
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, TranslatorInterface $translator, UserAuthenticatorInterface $authenticator, LoginFormAuthenticator $formAuthenticator): Response {
         $user = new Parents();
@@ -41,6 +45,12 @@ class RegistrationController extends AbstractController {
                     $form->get('plainPassword')->getData()
                 )
             );
+
+            $idRole = $entityManager->getRepository(Roles::class)->find(2);
+
+            $user->setIdrole($idRole);
+
+            $user->setRoles((array) 'ROLE_USER');
 
             $entityManager->persist($user);
             $entityManager->flush();
