@@ -16,6 +16,8 @@ public class RegisterActivity extends CommunActivity implements View.OnClickList
     //Déclaration du binding contenant les références des composants
     private ActivityRegisterBinding binding;
 
+    private String login, password, passwordRepeat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,21 +39,29 @@ public class RegisterActivity extends CommunActivity implements View.OnClickList
         if (view == binding.btRegister) {
 
             /*----------------------*/
+            // Récupération des données envoyées dans des variables
+            /*----------------------*/
+
+            login = binding.tvEmailCreateLogin.getText().toString();
+            password = binding.tvPasswordCreateLogin.getText().toString();
+            passwordRepeat = binding.tvPasswordConfirmationCreateLogin.getText().toString();
+
+            /*----------------------*/
             // Vérification de l'enregistrement
             /*----------------------*/
 
             //On vérifie que l'email et le mot de passe ne soient pas vides
-            if (binding.tvEmailCreateLogin.getText().toString().isEmpty() || binding.tvPasswordCreateLogin.getText().toString().isEmpty() || binding.tvPasswordConfirmationCreateLogin.getText().toString().isEmpty()) {
+            if (login.isEmpty() || password.isEmpty() || passwordRepeat.isEmpty()) {
 
                 binding.tvLoginError.setVisibility(View.VISIBLE);
                 binding.tvLoginError.setText("Tous les champs sont requis");
 
-            } else if (!CommonUtils.emailValidator.isValid(binding.tvEmailCreateLogin.getText().toString())) { //Si l'email n'est pas dans le bon format, on affiche une erreur
+            } else if (!CommonUtils.emailValidator.isValid(login)) { //Si l'email n'est pas dans le bon format, on affiche une erreur
 
                 binding.tvLoginError.setVisibility(View.VISIBLE);
                 binding.tvLoginError.setText("Email erroné");
 
-            } else if (!binding.tvPasswordCreateLogin.getText().toString().equals(binding.tvPasswordConfirmationCreateLogin.getText().toString())) { //Si les mdp ne sont pas identiques, on affiche une erreur
+            } else if (!password.equals(passwordRepeat)) { //Si les mdp ne sont pas identiques, on affiche une erreur
 
                 binding.tvLoginError.setVisibility(View.VISIBLE);
                 binding.tvLoginError.setText("Les mots de passes doivent être identiques");
@@ -61,9 +71,10 @@ public class RegisterActivity extends CommunActivity implements View.OnClickList
                 try {
 
                     //Hash du mot de passe utilisateur
-                    String hashPassword = HashPassword(binding.tvPasswordCreateLogin.getText().toString());
+                    //String hashPassword = HashPassword(binding.tvPasswordCreateLogin.getText().toString());
 
-                    ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailCreateLogin.getText().toString(), hashPassword);
+                    //ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailCreateLogin.getText().toString(), hashPassword);
+                    ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailCreateLogin.getText().toString(), binding.tvPasswordCreateLogin.getText().toString());
 
                     //On converti l'utilisateur en JSON
                     String jsonAEnvoyer = CommonUtils.gson.toJson(parentsAEnvoyer);
@@ -91,10 +102,14 @@ public class RegisterActivity extends CommunActivity implements View.OnClickList
                         }
                     }.start();
 
-                } catch (NoSuchAlgorithmException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                     binding.tvLoginError.setVisibility(View.VISIBLE);
                     binding.tvLoginError.setText("Un problème est survenu");
+//                    catch (NoSuchAlgorithmException e) {
+//                        e.printStackTrace();
+//                        binding.tvLoginError.setVisibility(View.VISIBLE);
+//                        binding.tvLoginError.setText("Un problème est survenu");
                 }
             }
         } else if (view == binding.btAccessShare) {

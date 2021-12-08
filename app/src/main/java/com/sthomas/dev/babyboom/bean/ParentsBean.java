@@ -6,7 +6,7 @@ public class ParentsBean {
     private String parent2Name;
     private String tel;
     private String email;
-    private int postalCode;
+    private String postalCode;
     private String shareCode;
     private String login;
     private String password;
@@ -70,11 +70,11 @@ public class ParentsBean {
         this.email = email;
     }
 
-    public int getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(int postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 

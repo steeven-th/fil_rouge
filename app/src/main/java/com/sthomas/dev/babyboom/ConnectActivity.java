@@ -9,8 +9,6 @@ import com.sthomas.dev.babyboom.databinding.ActivityConnectBinding;
 import com.sthomas.dev.babyboom.utils.CommonUtils;
 import com.sthomas.dev.babyboom.utils.OkHttpUtils;
 
-import java.security.NoSuchAlgorithmException;
-
 public class ConnectActivity extends CommunActivity implements View.OnClickListener {
 
     //Déclaration du binding contenant les références des composants
@@ -61,9 +59,10 @@ public class ConnectActivity extends CommunActivity implements View.OnClickListe
                         try {
 
                             //Hash du mot de passe utilisateur
-                            String hashPassword = HashPassword(binding.tvPasswordLogin.getText().toString());
+                            //String hashPassword = HashPassword(binding.tvPasswordLogin.getText().toString());
 
-                            ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailLogin.getText().toString(), hashPassword);
+                            //ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailLogin.getText().toString(), hashPassword);
+                            ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailLogin.getText().toString(), binding.tvPasswordLogin.getText().toString());
 
                             //On converti l'utilisateur en JSON
                             String jsonAEnvoyer = CommonUtils.gson.toJson(parentsAEnvoyer);
