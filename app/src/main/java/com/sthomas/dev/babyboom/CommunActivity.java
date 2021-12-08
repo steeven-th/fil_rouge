@@ -17,7 +17,8 @@ import com.sthomas.dev.babyboom.utils.CommonUtils;
 
 public class CommunActivity extends CommonUtils {
 
-    public String URL = "http://192.168.1.238:8080";
+    //public String URL = "http://192.168.1.238:8080/babyboom-0.0.1";
+    public String URL = "http://82.65.175.159:8383";
 
     @Override
     protected void onResume() {
