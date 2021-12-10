@@ -9,8 +9,6 @@ import com.sthomas.dev.babyboom.databinding.ActivityRegisterBinding;
 import com.sthomas.dev.babyboom.utils.CommonUtils;
 import com.sthomas.dev.babyboom.utils.OkHttpUtils;
 
-import java.security.NoSuchAlgorithmException;
-
 public class RegisterActivity extends CommunActivity implements View.OnClickListener {
 
     //Déclaration du binding contenant les références des composants
@@ -61,6 +59,11 @@ public class RegisterActivity extends CommunActivity implements View.OnClickList
                 binding.tvLoginError.setVisibility(View.VISIBLE);
                 binding.tvLoginError.setText("Email erroné");
 
+            } else if (password.length() < 8) {
+
+                binding.tvLoginError.setVisibility(View.VISIBLE);
+                binding.tvLoginError.setText("Le mot de passe doit contenir au moins 8 caractères");
+
             } else if (!password.equals(passwordRepeat)) { //Si les mdp ne sont pas identiques, on affiche une erreur
 
                 binding.tvLoginError.setVisibility(View.VISIBLE);
@@ -71,9 +74,6 @@ public class RegisterActivity extends CommunActivity implements View.OnClickList
                 try {
 
                     //Hash du mot de passe utilisateur
-                    //String hashPassword = HashPassword(binding.tvPasswordCreateLogin.getText().toString());
-
-                    //ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailCreateLogin.getText().toString(), hashPassword);
                     ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailCreateLogin.getText().toString(), binding.tvPasswordCreateLogin.getText().toString());
 
                     //On converti l'utilisateur en JSON

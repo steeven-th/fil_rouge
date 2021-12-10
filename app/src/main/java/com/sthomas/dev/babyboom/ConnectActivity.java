@@ -58,10 +58,7 @@ public class ConnectActivity extends CommunActivity implements View.OnClickListe
                     public void run() {
                         try {
 
-                            //Hash du mot de passe utilisateur
-                            //String hashPassword = HashPassword(binding.tvPasswordLogin.getText().toString());
-
-                            //ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailLogin.getText().toString(), hashPassword);
+                            //Création de l'utilisateur a envoyer
                             ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailLogin.getText().toString(), binding.tvPasswordLogin.getText().toString());
 
                             //On converti l'utilisateur en JSON
