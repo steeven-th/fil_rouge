@@ -236,7 +236,7 @@ public class MapActivity extends CommunActivity implements OnMapReadyCallback, V
 
                     GoogleKeys googleKeys = new GoogleKeys();
 
-                    //Récupération de tous les POI demandés dans un rayon de 20km
+                    //Récupération des infos du POI sélectionné
                     markerClick = JsonUtils.loadDetailsPoi(
                             "https://maps.googleapis.com/maps/api/place/details/json?" +
                                     "place_id=" + //Type de recherche : par ID
@@ -245,7 +245,7 @@ public class MapActivity extends CommunActivity implements OnMapReadyCallback, V
                                     googleKeys.googlePointerKey//Clé de l'API
                     );
 
-                    //Appel de refreshScreen pour afficher les POI sur la carte
+                    //Appel de refreshScreen pour afficher les détails du POI
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
