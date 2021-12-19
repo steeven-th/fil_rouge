@@ -59,10 +59,10 @@ public class RegisterActivity extends CommunActivity implements View.OnClickList
                 binding.tvLoginError.setVisibility(View.VISIBLE);
                 binding.tvLoginError.setText("Email erroné");
 
-            } else if (password.length() < 8) {
+            } else if (!CommonUtils.regex.matcher(password).find()) {
 
                 binding.tvLoginError.setVisibility(View.VISIBLE);
-                binding.tvLoginError.setText("Le mot de passe doit contenir au moins 8 caractères");
+                binding.tvLoginError.setText("Le mot de passe doit contenir au moins 8 caractères, 1 MAJ, 1MIN et 1 caractère spécial");
 
             } else if (!password.equals(passwordRepeat)) { //Si les mdp ne sont pas identiques, on affiche une erreur
 

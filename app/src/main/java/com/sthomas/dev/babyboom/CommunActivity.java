@@ -8,17 +8,17 @@ import android.location.LocationManager;
 import android.view.View;
 import android.view.WindowManager;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.sthomas.dev.babyboom.utils.CommonUtils;
 
-public class CommunActivity extends CommonUtils {
+public class CommunActivity extends AppCompatActivity {
 
-    //public String URL = "http://192.168.1.238:8080/babyboom-0.0.1";
-    public String URL = "http://82.65.175.159:8383";
+    public String URL = "http://192.168.1.238:8080";
+    //public String URL = "http://82.65.175.159:8383";
 
     @Override
     protected void onResume() {
