@@ -70,7 +70,6 @@ public class MapActivity extends CommunActivity implements OnMapReadyCallback, V
         } else if (view == binding.btNursery) {
             searchPoi("assistante", "maternelle");
         }
-
     }
 
     /**

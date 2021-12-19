@@ -32,7 +32,7 @@ public class ConnectActivity extends CommunActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-        // Si clic sur le bouton connexion, on charge la page principale MainActivity
+        // Vérification du bouton cliqué
         if (view == binding.btLogin) {
 
             /*----------------------*/
@@ -45,12 +45,14 @@ public class ConnectActivity extends CommunActivity implements View.OnClickListe
                 binding.tvLoginError.setVisibility(View.VISIBLE);
                 binding.tvLoginError.setText("Tous les champs sont requis");
 
-            } else if (!CommonUtils.emailValidator.isValid(binding.tvEmailLogin.getText().toString())) { //Si l'email n'est pas dans le bon format, on affiche une erreur
+            } //Si l'email n'est pas dans le bon format, on affiche une erreur
+            else if (!CommonUtils.emailValidator.isValid(binding.tvEmailLogin.getText().toString())) {
 
                 binding.tvLoginError.setVisibility(View.VISIBLE);
                 binding.tvLoginError.setText("Email erroné");
 
-            } else { //Si tout va bien, on contact le serveur qui va contrôler les données avec la BDD
+            }
+            else { //Si tout va bien, on contact le serveur qui va contrôler les données avec la BDD
 
                 //Nouveau Thread
                 new Thread() {
@@ -59,7 +61,8 @@ public class ConnectActivity extends CommunActivity implements View.OnClickListe
                         try {
 
                             //Création de l'utilisateur a envoyer
-                            ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailLogin.getText().toString(), binding.tvPasswordLogin.getText().toString());
+                            ParentsBean parentsAEnvoyer = new ParentsBean(binding.tvEmailLogin.getText().toString(),
+                                    binding.tvPasswordLogin.getText().toString());
 
                             //On converti l'utilisateur en JSON
                             String jsonAEnvoyer = CommonUtils.gson.toJson(parentsAEnvoyer);
@@ -88,9 +91,11 @@ public class ConnectActivity extends CommunActivity implements View.OnClickListe
                     }
                 }.start();
             }
-        } else if (view == binding.btAccessShare) {
+        }
+        else if (view == binding.btAccessShare) {
             System.out.println("clic accès partage");
-        } else if (view == binding.tvCreateAccountPage) {
+        }
+        else if (view == binding.tvCreateAccountPage) {
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
         }

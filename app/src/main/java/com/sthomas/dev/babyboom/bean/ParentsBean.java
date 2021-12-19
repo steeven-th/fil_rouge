@@ -20,6 +20,18 @@ public class ParentsBean {
         this.password = password;
     }
 
+    public ParentsBean(String parent1Name, String parent2Name, String tel, String email,
+                       String postalCode, String shareCode, String login, String password) {
+        this.parent1Name = parent1Name;
+        this.parent2Name = parent2Name;
+        this.tel = tel;
+        this.email = email;
+        this.postalCode = postalCode;
+        this.shareCode = shareCode;
+        this.login = login;
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "ParentsBean{" +
