@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 @RestController
 public class ParentsAPI {
@@ -16,13 +17,23 @@ public class ParentsAPI {
     @Autowired
     private ParentsDao parentsDao;
 
+    private List<ParentsBean> parentsBeanList;
+    private final Pattern regex = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,20}$");
+
     //http://localhost:8080/saveParents
     @PostMapping("/saveParents")
     public boolean saveParents(@RequestBody ParentsBean parentsBean) {
         System.out.println("/saveParents" + parentsBean.toString());
 
-        //On vérifie en BDD si un utilisateur avec cet email existe
-        List<ParentsBean> parentsBeanList = parentsDao.findByEmail(parentsBean.getEmail());
+        //On vérifie si il y a bien un email, un password et que ce dernier suive le regex imposé
+        if (parentsBean.getEmail().isEmpty() || parentsBean.getPassword().isEmpty() || !regex.matcher(parentsBean.getPassword()).find()) {
+
+            return false;
+        } else {
+
+            //On vérifie en BDD si un utilisateur avec cet email existe
+            parentsBeanList = parentsDao.findByEmail(parentsBean.getEmail());
+        }
 
         //Si il n'existe pas, on enregistre l'utilisateur et on renvoi TRUE, sinon en renvoi FALSE
         if (parentsBeanList.isEmpty()) {
@@ -36,7 +47,6 @@ public class ParentsAPI {
 
             return true;
         } else {
-            System.out.println("Cet utilisateur existe déjà");
 
             return false;
         }
@@ -49,7 +59,7 @@ public class ParentsAPI {
         System.out.println("/loginParents : " + parentsBean.toString());
 
         //On vérifie en BDD si un utilisateur avec cet email existe
-        List<ParentsBean> parentsBeanList = parentsDao.findByEmail(parentsBean.getEmail());
+        parentsBeanList = parentsDao.findByEmail(parentsBean.getEmail());
 
         //Si l'utilisateur n'existe pas, on retourne FALSE
         if (parentsBeanList.isEmpty()) {
